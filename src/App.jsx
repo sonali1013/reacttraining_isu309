@@ -1,27 +1,17 @@
-import AppHeader from './components/Header/AppHeader';
-import AppFooter from './components/footer/AppFooter';
+import Header from './components/Header/Header';
 
 import './App.css'
 
-
-function Sidebar(){
-  return(
-    <div className="sidebar">
-    <h3>Sidebar</h3>
-    </div>
-  );
-}
-function  App() {
+function App() {
+  const currentYear = new Date().getFullYear();
 
   return (
     <>
-      <AppHeader />
-    
-          <center>
-            <h2>Hello Team ,Thank You for attending React Js Traning program</h2>
-          </center>
-     <Sidebar />
-      <AppFooter />
+      <Header />
+      <center>
+        <h1>My AI Journey Begins</h1>
+        <p>{currentYear}</p>
+      </center>
     </>
   )
 }
