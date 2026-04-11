@@ -1,51 +1,98 @@
-# React Hello World
+# User Card Gallery
 
-A simple React application that displays "Hello World".
+A React application that demonstrates the use of React 19's `use()` hook to fetch and display user data from an API.
 
-## Getting Started
+## Features
 
-### Prerequisites
+- ✨ Uses React 19's `use()` hook for handling asynchronous data fetching
+- 🎨 Beautiful card-based UI with responsive design
+- 🔄 Suspense integration for loading states
+- 📱 Mobile-friendly layout
+- 🎯 Fetches data from JSONPlaceholder API
 
-- Node.js (version 18 or higher)
-- npm
+## Project Structure
 
-### Installation
+```
+react/
+├── src/
+│   ├── components/
+│   │   ├── UserCard.jsx          # User card component
+│   │   └── UserCard.css          # Card styling
+│   ├── utils/
+│   │   └── fetchUsers.js         # API fetch utility
+│   ├── App.jsx                   # Main app with use() hook
+│   ├── App.css                   # App styling
+│   ├── main.jsx                  # Entry point
+│   └── index.css                 # Global styles
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## How It Works
+
+### The `use()` Hook
+
+The application demonstrates React 19's `use()` hook, which allows you to read the value of a Promise directly in your component:
+
+```jsx
+const users = use(usersPromise);
+```
+
+This hook works seamlessly with React Suspense to handle loading states:
+
+- While the promise is pending, the component suspends
+- React shows the Suspense fallback (loading state)
+- When the promise resolves, the component renders with the data
+
+## Installation
 
 1. Install dependencies:
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
-### Running the Application
+## Running the Project
 
-To start the development server:
+Start the development server:
 ```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173`.
+The application will be available at `http://localhost:5173`
 
-### Building for Production
+## Build for Production
 
-To build the application:
 ```bash
 npm run build
 ```
 
-The built files will be in the `dist` directory.
+## Preview Production Build
 
-### Linting
-
-To run the linter:
 ```bash
-npm run lint
+npm run preview
 ```
 
-## Project Structure
+## API
 
-- `src/App.jsx` - Main application component
-- `src/main.jsx` - Entry point
-- `src/index.css` - Global styles
-- `src/App.css` - Component styles
-- `index.html` - HTML template
-- `vite.config.js` - Vite configuration
+The app fetches user data from:
+- **Endpoint**: https://jsonplaceholder.typicode.com/users
+- **Method**: GET
+- **Response**: Array of user objects with name, email, phone, company, address, etc.
+
+## Key Concepts Demonstrated
+
+1. **React 19 `use()` Hook**: Reading promises directly in components
+2. **Suspense**: Handling loading states declaratively
+3. **Component Composition**: Separating concerns with reusable components
+4. **Modern React**: Using Vite and React 19 features
+5. **Responsive Design**: Mobile-first approach with CSS Grid
+
+## Browser Requirements
+
+- Modern browsers with React 19 support
+- The `use()` hook is available in React 19+
+
+## License
+
+MIT
